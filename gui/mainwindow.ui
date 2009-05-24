@@ -7,8 +7,17 @@
     <x>0</x>
     <y>0</y>
     <width>746</width>
-    <height>621</height>
+    <height>571</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="acceptDrops">
+   <bool>false</bool>
   </property>
   <property name="windowTitle">
    <string>SimplexSolver</string>
@@ -87,9 +96,6 @@
           <attribute name="verticalHeaderStretchLastSection">
            <bool>false</bool>
           </attribute>
-          <attribute name="verticalHeaderVisible">
-           <bool>true</bool>
-          </attribute>
          </widget>
         </item>
         <item>
@@ -124,8 +130,14 @@
           </item>
           <item>
            <widget class="QPushButton" name="buttonAddVariable">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="text">
-             <string>Add variable</string>
+             <string>Variable</string>
             </property>
            </widget>
           </item>
@@ -134,6 +146,12 @@
             <property name="enabled">
              <bool>false</bool>
             </property>
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="text">
              <string>Remove variable</string>
             </property>
@@ -141,8 +159,14 @@
           </item>
           <item>
            <widget class="QPushButton" name="buttonAddLimit">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="text">
-             <string>Add limit</string>
+             <string>Limit</string>
             </property>
            </widget>
           </item>
@@ -150,6 +174,12 @@
            <widget class="QPushButton" name="buttonRemoveLimit">
             <property name="enabled">
              <bool>false</bool>
+            </property>
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
             </property>
             <property name="text">
              <string>Remove limit</string>
@@ -452,7 +482,7 @@
   <connection>
    <sender>buttonPrintSolution</sender>
    <signal>clicked()</signal>
-   <receiver>actionSaveSolution</receiver>
+   <receiver>actionPrintSolution</receiver>
    <slot>trigger()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -460,8 +490,8 @@
      <y>546</y>
     </hint>
     <hint type="destinationlabel">
-     <x>-1</x>
-     <y>-1</y>
+     <x>61</x>
+     <y>424</y>
     </hint>
    </hints>
   </connection>
