@@ -198,16 +198,15 @@ namespace SimplexMethod
 
             if(m_variableType[j] != VariableArtificial)
             {
+                // check artificial deltas
+                if(!checkEquals(m_rowWD[j], 0.0))
+                    m_artificialFlag = true;
                 m_rowD[j] -= m_rowC[j];
             }
             else
             {
                 m_rowWD[j] -= 1.0;
             }
-
-            // check artificial deltas
-            if(!checkEquals(m_rowWD[j], 0.0))
-                m_artificialFlag = true;
         }
 
         m_maxj = m_width;
