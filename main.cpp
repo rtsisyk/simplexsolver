@@ -30,10 +30,19 @@ int main(int argc, char *argv[])
     QApplication app(argc, argv);
     QString locale = QLocale::system().name();
     QTranslator translator;
-    translator.load("locale/"+locale);
-    app.installTranslator(&translator);
+
+    if(!translator.load(app.applicationDirPath() + "/locale/"+locale))
+    {
+        translator.load(app.applicationDirPath() + "/"+locale);
+    }
+
+    if(!translator.isEmpty())
+    {
+        app.installTranslator(&translator);
+    }
 
     MainWindow w;
     w.show();
+
     return app.exec();
 }
