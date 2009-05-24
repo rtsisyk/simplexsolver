@@ -1,0 +1,7 @@
+ui_*.h
+Makefile*
+*~
+release/
+debug/
+qtc-gdbmacros/
+SimplexSolver

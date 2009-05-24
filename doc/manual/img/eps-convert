@@ -1,0 +1,8 @@
+#!/bin/bash
+
+for img in $*; do
+    echo "Converting $img"
+    eps2eps -dNOCACHE  "$img" "${img}_tmp"
+    mv -f "${img}_tmp" "$img"
+    epstopdf "${img}"
+done
