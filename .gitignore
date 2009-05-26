@@ -5,4 +5,4 @@ release/
 debug/
 qtc-gdbmacros/
 SimplexSolver
-*pro.user
+*.pro.user

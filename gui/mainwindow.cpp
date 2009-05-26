@@ -2,7 +2,7 @@
 
     This file is part of the SimplexSolver.
 
-    Copyright (C) 2009 Roman O Tsisyck <r.tsisyck@gmail.com>
+    Copyright (C) 2009 Roman O Tsisyck <inbox@art1x.com>
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -50,7 +50,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     copyrightText = QString("%1 2009 Roman O Tsisyck &lt;%2&gt;").
            arg(QChar(0x00A9)).
-           arg("<a href=\"mailto:r.tsisyck@gmail.com\">r.tsisyck@gmail.com</a>");
+           arg("<a href=\"mailto:inbox@art1x.com\">inbox@art1x.com</a>");
 
     ui->statusBar->addPermanentWidget(new QLabel(copyrightText));
     ui->sourceTableView->resizeRowsColumns();
