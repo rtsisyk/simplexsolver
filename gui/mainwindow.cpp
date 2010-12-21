@@ -2,7 +2,7 @@
 
     This file is part of the SimplexSolver.
 
-    Copyright (C) 2009 Roman O Tsisyck <inbox@art1x.com>
+    Copyright (C) 2009 Roman Tsisyk <roman@tsisyk.com>
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -48,9 +48,9 @@ MainWindow::MainWindow(QWidget *parent)
     for(int i=0; i < m_minVariables; i++)
         ui->sourceTableView->appendVariable();
 
-    copyrightText = QString("%1 2009 Roman O Tsisyck &lt;%2&gt;").
+    copyrightText = QString("%1 2009 Roman Tsisyk &lt;%2&gt;").
            arg(QChar(0x00A9)).
-           arg("<a href=\"mailto:inbox@art1x.com\">inbox@art1x.com</a>");
+           arg("<a href=\"mailto:roman@tsisyk.com\">roman@tsisyk.com</a>");
 
     ui->statusBar->addPermanentWidget(new QLabel(copyrightText));
     ui->sourceTableView->resizeRowsColumns();
@@ -239,7 +239,7 @@ void MainWindow::on_actionPrintSolution_triggered()
 
      if (dialog->exec() != QDialog::Accepted)
          return;
-     
+
      ui->solutionView->document()->print(&printer);
 }
 
@@ -254,7 +254,9 @@ void MainWindow::on_actionAbout_triggered()
     text+= tr("This program is linear programming solver.");
     text+="<br/>";
     text+="<br/>";
-    text+= tr("It uses simplex method to find optimum of function with selected limits. Use any search engine to find more information about this algorithm.");
+    text+= tr("It uses simplex method to find optimum of function"
+               "with selected limits. Use any search engine to find "
+               "more information about this algorithm.");
 
     text+="<br/>";
     text+="<br/>";
@@ -263,7 +265,8 @@ void MainWindow::on_actionAbout_triggered()
     text+="<br/>";
     text+=tr("This program comes with ABSOLUTELY NO WARRANTY.");
     text+=" ";
-    text+=tr("This is free software, and you are welcome to redistribute it under certain conditions.");
+    text+=tr("This is free software, and you are welcome to redistribute"
+             " it under certain conditions.");
     text+=" ";
     text+=tr("See %1 file of program package for details.").
             arg("LICENSE");

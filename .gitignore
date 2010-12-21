@@ -6,3 +6,6 @@ debug/
 qtc-gdbmacros/
 SimplexSolver
 *.pro.user
+*.o
+moc_*
+qrc_*

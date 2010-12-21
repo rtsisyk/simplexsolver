@@ -2,7 +2,7 @@
 
     This file is part of the SimplexSolver.
 
-    Copyright (C) 2009 Roman O Tsisyck <inbox@art1x.com>
+    Copyright (C) 2009 Roman Tsisyk <roman@tsisyk.com>
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -121,7 +121,7 @@ namespace SimplexMethod
         double columnTheta(size_t i) const;
         double mini() const;
         double maxj() const;
-        
+
         Interval stabilityRowC(size_t j) const;
         Interval stabilityColumnB(size_t i) const;
 

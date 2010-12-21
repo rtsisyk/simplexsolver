@@ -2,7 +2,7 @@
 
     This file is part of the SimplexSolver.
 
-    Copyright (C) 2009 Roman O Tsisyck <inbox@art1x.com>
+    Copyright (C) 2009 Roman Tsisyk <roman@tsisyk.com>
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -309,7 +309,7 @@ namespace Output {
     {
         m_cursor.insertBlock();
         m_cursor.insertHtml(QString("</b>%1</b> ").
-                            arg(tr("Solution is a stabled if:")));
+                            arg(tr("Stability conditions:")));
         for(size_t i=0; i < m_params->height(); i++)
         {
             if(m_params->limitType(i) != SimplexMethod::LimitMain)

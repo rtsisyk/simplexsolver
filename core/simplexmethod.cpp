@@ -2,7 +2,7 @@
 
     This file is part of the SimplexSolver.
 
-    Copyright (C) 2009 Roman O Tsisyck <inbox@art1x.com>
+    Copyright (C) 2009 Roman Tsisyk <roman@tsisyk.com>
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -20,7 +20,6 @@
 *******************************************************************************/
 
 #include "simplexmethod.h"
-#include <QDebug>
 
 namespace SimplexMethod
 {
@@ -244,6 +243,9 @@ namespace SimplexMethod
             // all artificial variables was removed from basis
             for(size_t j=0; j < m_width; j++)
             {
+                if(m_variableType[j] == VariableArtificial)
+                    continue;
+
                 if((m_rowD[j] > 0) &&
                    (m_maxj == m_width || m_rowD[j] > m_rowD[m_maxj]))
                     m_maxj = j;
@@ -328,7 +330,7 @@ namespace SimplexMethod
                 }
             }
 
-            qDebug() << "minj" << minj << "; cuti " << cuti;
+            // qDebug() << "minj" << minj << "; cuti " << cuti;
             if(minj == m_width)
             {
                 m_status = SolutionNotExists;

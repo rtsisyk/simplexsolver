@@ -1,8 +1,8 @@
 !define PRODUCT_NAME "SimplexSolver"
 !define PRODUCT_VERSION "1.0"
 !define PRODUCT_VERSION_FULL "1.0.0.0"
-!define PRODUCT_PUBLISHER 'Roman O Tsisyck'
-!define PRODUCT_WEB_SITE "http://www.art1x.com/"
+!define PRODUCT_PUBLISHER 'Roman Tsisyk'
+!define PRODUCT_WEB_SITE "http://roman.tsisyk.com/"
 !define PRODUCT_DIR_REGKEY "Software\Microsoft\Windows\CurrentVersion\App Paths\SimplexSolver.exe"
 !define PRODUCT_UNINST_KEY "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}"
 !define PRODUCT_UNINST_ROOT_KEY "HKLM"
