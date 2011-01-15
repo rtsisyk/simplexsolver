@@ -1,8 +1,8 @@
 !define PRODUCT_NAME "SimplexSolver"
 !define PRODUCT_VERSION "1.0"
-!define PRODUCT_VERSION_FULL "1.0.0.0"
+!define PRODUCT_VERSION_FULL "1.0.1.0"
 !define PRODUCT_PUBLISHER 'Roman Tsisyk'
-!define PRODUCT_WEB_SITE "http://roman.tsisyk.com/"
+!define PRODUCT_WEB_SITE "http://roman.tsisyk.com/projects/simplexsolver"
 !define PRODUCT_DIR_REGKEY "Software\Microsoft\Windows\CurrentVersion\App Paths\SimplexSolver.exe"
 !define PRODUCT_UNINST_KEY "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}"
 !define PRODUCT_UNINST_ROOT_KEY "HKLM"
@@ -27,13 +27,16 @@ ShowUnInstDetails show
 CRCCheck on
 XPStyle On
 
-Function ExecAppFile
-    UAC::Exec '' '"$INSTDIR\SimplexSolver.exe"' '' '$INSTDIR'
-FunctionEnd
 
+Function ExecAppFile
+	ExecShell "" "$INSTDIR\SimplexSolver.exe"
+    /* UAC::Exec '' '"$INSTDIR\SimplexSolver.exe"' '' '$INSTDIR' */
+FunctionEnd
+ 
 
 ; MUI Settings
 !define MUI_ABORTWARNING
+!define MUI_LANGDLL_ALLLANGUAGES
 Icon "${PROJECT_DIR}\gui\icon\main.ico"
 !define MUI_WELCOMEFINISHPAGE_BITMAP "${PACKAGE_DIR}\nsis-wizard.bmp"
 !define MUI_ICON "${PROJECT_DIR}\gui\icon\main.ico"
@@ -60,9 +63,13 @@ Icon "${PROJECT_DIR}\gui\icon\main.ico"
 !insertmacro MUI_UNPAGE_INSTFILES
 !insertmacro MUI_UNPAGE_FINISH
 
+
+!insertmacro MUI_LANGUAGE "English"
+!insertmacro MUI_LANGUAGE "Russian"
+
+!insertmacro MUI_RESERVEFILE_LANGDLL
 ; MUI end ------
 
-!insertmacro MUI_LANGUAGE "Russian"
 VIAddVersionKey /LANG=${LANG_RUSSIAN} "ProductName" '${PRODUCT_NAME}'
 VIAddVersionKey /LANG=${LANG_RUSSIAN} "FileDescription" '${PRODUCT_NAME}'
 VIAddVersionKey /LANG=${LANG_RUSSIAN} "CompanyName" '${PRODUCT_PUBLISHER}'
@@ -71,9 +78,8 @@ VIAddVersionKey /LANG=${LANG_RUSSIAN} "FileVersion" '${PRODUCT_VERSION}'
 VIAddVersionKey /LANG=${LANG_RUSSIAN} "ProductVersion" '${PRODUCT_VERSION}'
 
 VIProductVersion ${PRODUCT_VERSION_FULL}
-
+/* 
 Var WINVER
-
 !macro GetAdmin
   UAC_Elevate:
     UAC::RunElevated 
@@ -83,32 +89,22 @@ Var WINVER
     Quit
  
   UAC_Err:
-    MessageBox mb_iconstop "Ошибка контроля учетных записей. Пожалуйста, разрешите доступ программе установки."
+    MessageBox mb_iconstop "Administrator rights required for install!."
     Abort
  
   UAC_ElevationAborted:
     # elevation was aborted, run as normal?
-    MessageBox mb_iconstop "Установщику необходимы права администратора!"
+    MessageBox mb_iconstop "Administrator rights required for install!"
     Abort
  
   UAC_Success:
     StrCmp 1 $3 +4 ;Admin?
     StrCmp 3 $1 0 UAC_ElevationAborted ;Try again?
-    MessageBox mb_iconstop "Установщику необходимы права администратора!"
+    MessageBox mb_iconstop "Administrator rights required for install!"
     goto UAC_Elevate 
 !macroend
 
-Function .onInit
-  !insertmacro GetAdmin
-  Push $R0
-  Push $R1
-  ClearErrors
-
-  ReadRegStr $R0 HKLM \
-  "SOFTWARE\Microsoft\Windows NT\CurrentVersion" CurrentVersion
-
-  IfErrors lbl_error 0
-
+!macro CheckNtVersionString
   StrCpy $R1 $R0 3
   StrCmp $R1 '5.0' lbl_winnt_2000
   StrCmp $R1 '5.1' lbl_winnt_XP
@@ -135,11 +131,29 @@ Function .onInit
 
   lbl_winnt_seven:
     Strcpy $WINVER 'SEVEN'
+!macroend
+*/
+
+Function .onInit
+  !insertmacro MUI_LANGDLL_DISPLAY
+  
+  ;!insertmacro GetAdmin
+  Push $R0
+  Push $R1
+  ClearErrors
+
+  ReadRegStr $R0 HKLM \
+  "SOFTWARE\Microsoft\Windows NT\CurrentVersion" CurrentVersion
+
+  IfErrors lbl_error 0
+
+  ; not needed, should work on any version of WinNT
+  ;!CheckNtVersionString
 
   Goto lbl_done
 
   lbl_error:
-    Abort "Ваша версия Windows не подерживается"
+    Abort "Your version of Windows is not supported!"
     Strcpy $R0 ''
 
   lbl_done:
@@ -149,7 +163,7 @@ Function .onInit
 
 FunctionEnd
 
-Section "SimpleSolver"
+Section "!SimplexSolver"
   SectionIN RO
 
   SetOutPath "$INSTDIR"
@@ -157,6 +171,7 @@ Section "SimpleSolver"
   File "${PROJECT_DIR}\LICENSE"
 
   SetOutPath "$INSTDIR\locale"
+  ; Install all locales
   File "${PROJECT_DIR}\locale\*.qm"
 
   WriteUninstaller "$INSTDIR\uninst.exe"
@@ -170,30 +185,41 @@ Section "SimpleSolver"
 
 SectionEnd
 
+/*
 Section "VC Runtime"
-  SetOutPath "$TEMP"
-  SetOverwrite ifdiff
-  File "${PACKAGE_DIR}\vcredist_x86.exe"
-  ExecWait '$TEMP\vcredist_x86.exe /q'
+;
+;Download from here http://www.microsoft.com/downloads/en/details.aspx?familyid=a5c84275-3b97-4ab7-a40d-3802b2af5fc2&displaylang=en
+;
+
+ SetOutPath "$TEMP"
+SetOverwrite ifdiff
+ File "${PACKAGE_DIR}\vcredist_x86.exe"
+ ExecWait '$TEMP\vcredist_x86.exe /q'
 SectionEnd
 
 Section "Qt Runtime"
+SetOutPath "$INSTDIR"
+ File "${QTBIN_DIR}\QtCore4.dll"
+ File "${QTBIN_DIR}\QtGui4.dll"
+SectionEnd
+*/
+
+Section /o "Manual (in Russian)" 
   SetOutPath "$INSTDIR"
-  File "${PACKAGE_DIR}\QtCore4.dll"
-  File "${PACKAGE_DIR}\QtGui4.dll"
+  File "${PROJECT_DIR}\doc\manual\manual.pdf"
 SectionEnd
 
-Section "Ярлыки в меню Пуск"
+Section "Start menu links"
   SetOutPath "$INSTDIR"
-  SetShellVarContext all
+  ;SetShellVarContext all
   CreateDirectory "$SMPROGRAMS\SimplexSolver"
   CreateShortCut "$SMPROGRAMS\SimplexSolver\SimplexSolver.lnk" "$INSTDIR\SimplexSolver.exe"
   CreateShortCut "$SMPROGRAMS\SimplexSolver\Uninstall.lnk" "$INSTDIR\uninst.exe"
 SectionEnd
 
-Section "Ярлыки на рабочем столе"
+Section "Desktop links"
   SetOutPath "$INSTDIR"
-  SetShellVarContext all
+  ;SetShellVarContext all
   CreateShortCut "$DESKTOP\SimplexSolver.lnk" "$INSTDIR\SimplexSolver.exe"
 SectionEnd
 
@@ -202,6 +228,7 @@ SectionEnd
  ; !insertmacro MUI_DESCRIPTION_TEXT ${SEC01} ""
 !insertmacro MUI_FUNCTION_DESCRIPTION_END
 
+/*
 Function .OnInstFailed
     UAC::Unload ;Must call unload!
 FunctionEnd
@@ -221,6 +248,7 @@ FunctionEnd
 Function un.onInit
   !insertmacro GetAdmin
 FunctionEnd
+*/
 
 Section Uninstall
   SetOutPath "$TEMP"
@@ -229,15 +257,15 @@ Section Uninstall
 
   Delete "$INSTDIR\SimplexSolver.exe"
 
-  Delete "$INSTDIR\QtCore4.dll"
-  Delete "$INSTDIR\QtGui4.dll"
+;  Delete "$INSTDIR\QtCore4.dll"
+;  Delete "$INSTDIR\QtGui4.dll"
   Delete "$INSTDIR\manual.pdf"
   Delete "$INSTDIR\locale\*.qm"
 
   RMDir /r "$INSTDIR\locale" 
   RMDir /r "$INSTDIR"
  
-  SetShellVarContext all
+  ;SetShellVarContext all
   Delete "$DESKTOP\SimplexSolver.lnk"
 
   Delete "$SMPROGRAMS\SimplexSolver\SimplexSolver.lnk"

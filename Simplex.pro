@@ -41,3 +41,9 @@ OTHER_FILES += gui/icon/main.ico \
 
 RESOURCES += gui/main.qrc
 RC_FILE = gui/win32.rc
+
+updateqm.input = TRANSLATIONS
+updateqm.output = locale/${QMAKE_FILE_BASE}.qm
+updateqm.commands = lrelease ${QMAKE_FILE_IN} -qm locale/${QMAKE_FILE_BASE}.qm
+updateqm.CONFIG += no_link target_predeps
+QMAKE_EXTRA_COMPILERS += updateqm

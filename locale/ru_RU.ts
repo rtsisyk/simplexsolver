@@ -4,77 +4,77 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="85"/>
+        <location filename="../gui/mainwindow.cpp" line="88"/>
         <source>Remove variable</source>
         <translation>Удалить переменную</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="86"/>
+        <location filename="../gui/mainwindow.cpp" line="89"/>
         <source>Can&apos;t remove variable</source>
         <translation>Невозможно удалить переменную</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="99"/>
+        <location filename="../gui/mainwindow.cpp" line="102"/>
         <source>Remove limit</source>
         <translation>Удалить ограничение</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="100"/>
+        <location filename="../gui/mainwindow.cpp" line="103"/>
         <source>Can&apos;t remove limit</source>
         <translation>Невозможно удалить ограничение</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="204"/>
+        <location filename="../gui/mainwindow.cpp" line="207"/>
         <source>Open Document Text (*.odt)</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="205"/>
+        <location filename="../gui/mainwindow.cpp" line="208"/>
         <source>HTML (*.html)</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="209"/>
+        <location filename="../gui/mainwindow.cpp" line="212"/>
         <source>Save solution</source>
         <translation>Сохранить решение</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="238"/>
+        <location filename="../gui/mainwindow.cpp" line="241"/>
         <source>Print document</source>
         <translation>Распечатать документ</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="252"/>
+        <location filename="../gui/mainwindow.cpp" line="255"/>
         <source>About SimplexSolver</source>
         <translation>О SimplexSolver</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="254"/>
+        <location filename="../gui/mainwindow.cpp" line="257"/>
         <source>This program is linear programming solver.</source>
         <translation>Данная программа решает задачу линейного программирования.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="257"/>
+        <location filename="../gui/mainwindow.cpp" line="260"/>
         <source>It uses simplex method to find optimum of function with selected limits. Use any search engine to find more information about this algorithm.</source>
-        <translation>Она использует симплекс-метод для нахождения оптимума функции с выбранными ограничениями. Используйте поисковую систему для нахождения дополнительной информации об этом алгоритме.</translation>
+        <translation>Она использует симплекс-метод для нахождения оптимума функции с выбранными ограничениями. Используйте любую поисковую систему для нахождения дополнительной информации об этом алгоритме.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="264"/>
+        <location filename="../gui/mainwindow.cpp" line="269"/>
         <source>This program comes with ABSOLUTELY NO WARRANTY.</source>
         <translation>Данная программа распространяется БЕЗ ВСЯКИХ ГАРАНТИЙ.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="266"/>
+        <location filename="../gui/mainwindow.cpp" line="271"/>
         <source>This is free software, and you are welcome to redistribute it under certain conditions.</source>
         <translation>Это свободное программное обеспечение и вы можете распространять его в соответствии с определенными условиями.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="268"/>
+        <location filename="../gui/mainwindow.cpp" line="274"/>
         <source>See %1 file of program package for details.</source>
         <translation>Ознакомтесь с файлом %1 дистрибутива программы для подробностей.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="271"/>
+        <location filename="../gui/mainwindow.cpp" line="277"/>
         <source>About program</source>
         <translation>О программе</translation>
     </message>
@@ -82,116 +82,116 @@
 <context>
     <name>MainWindowClass</name>
     <message>
-        <location filename="../gui/mainwindow.ui" line="20"/>
+        <location filename="../gui/mainwindow.ui" line="23"/>
         <source>SimplexSolver</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="52"/>
-        <location filename="../gui/mainwindow.ui" line="272"/>
+        <location filename="../gui/mainwindow.ui" line="55"/>
+        <location filename="../gui/mainwindow.ui" line="293"/>
         <source>Conditions</source>
         <translation>Условия</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="298"/>
+        <location filename="../gui/mainwindow.ui" line="319"/>
         <source>Add variable</source>
         <translation>Добавить переменную</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="115"/>
-        <location filename="../gui/mainwindow.ui" line="293"/>
+        <location filename="../gui/mainwindow.ui" line="118"/>
+        <location filename="../gui/mainwindow.ui" line="314"/>
         <source>Optimize</source>
         <translation>Оптимизировать</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="147"/>
-        <location filename="../gui/mainwindow.ui" line="303"/>
+        <location filename="../gui/mainwindow.ui" line="156"/>
+        <location filename="../gui/mainwindow.ui" line="324"/>
         <source>Remove variable</source>
         <translation>Удалить переменную</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="308"/>
+        <location filename="../gui/mainwindow.ui" line="329"/>
         <source>Add limit</source>
         <translation>Добавить ограничение</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="164"/>
-        <location filename="../gui/mainwindow.ui" line="313"/>
+        <location filename="../gui/mainwindow.ui" line="185"/>
+        <location filename="../gui/mainwindow.ui" line="334"/>
         <source>Remove limit</source>
-        <translation type="unfinished">Удалить ограничение</translation>
+        <translation>Удалить ограничение</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="137"/>
+        <location filename="../gui/mainwindow.ui" line="140"/>
         <source>Variable</source>
-        <translation type="unfinished">Переменная</translation>
+        <translation>Переменная</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="154"/>
+        <location filename="../gui/mainwindow.ui" line="169"/>
         <source>Limit</source>
-        <translation type="unfinished">Ограничение</translation>
+        <translation>Ограничение</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="190"/>
+        <location filename="../gui/mainwindow.ui" line="211"/>
         <source>Solution</source>
         <translation>Решение</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="217"/>
+        <location filename="../gui/mainwindow.ui" line="238"/>
         <source>Save to file</source>
         <translation>Сохранить в файл</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="227"/>
+        <location filename="../gui/mainwindow.ui" line="248"/>
         <source>Print</source>
         <translation>Распечать</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="263"/>
+        <location filename="../gui/mainwindow.ui" line="284"/>
         <source>File</source>
         <translation>Файл</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="282"/>
+        <location filename="../gui/mainwindow.ui" line="303"/>
         <source>Help</source>
         <translation>Помощь</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="321"/>
+        <location filename="../gui/mainwindow.ui" line="342"/>
         <source>&amp;Save solution</source>
         <translation>&amp;Сохранить решение</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="324"/>
+        <location filename="../gui/mainwindow.ui" line="345"/>
         <source>Ctrl+S</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="329"/>
+        <location filename="../gui/mainwindow.ui" line="350"/>
         <source>E&amp;xit</source>
         <translation>Выход</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="332"/>
+        <location filename="../gui/mainwindow.ui" line="353"/>
         <source>Ctrl+X</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="337"/>
+        <location filename="../gui/mainwindow.ui" line="358"/>
         <source>About</source>
         <translation>О программе</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="345"/>
+        <location filename="../gui/mainwindow.ui" line="366"/>
         <source>&amp;Print</source>
         <translation>Печать</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="348"/>
+        <location filename="../gui/mainwindow.ui" line="369"/>
         <source>Print solution</source>
         <translation>Распечатать решение</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="351"/>
+        <location filename="../gui/mainwindow.ui" line="372"/>
         <source>Ctrl+P</source>
         <translation></translation>
     </message>
@@ -225,8 +225,12 @@
     </message>
     <message>
         <location filename="../gui/output/outputqtdocument.cpp" line="312"/>
+        <source>Stability conditions:</source>
+        <translation>Условия стабильности:</translation>
+    </message>
+    <message>
         <source>Solution is a stabled if:</source>
-        <translation>Решение стабильно, если:</translation>
+        <translation type="obsolete">Решение стабильно, если:</translation>
     </message>
 </context>
 <context>

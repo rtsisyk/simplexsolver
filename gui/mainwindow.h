@@ -23,13 +23,9 @@
 #define MAINWINDOW_H
 
 #include <QtGui/QMainWindow>
-#include <QtGui/QFileDialog>
-#include <QtGui/QPrinter>
-#include <QtGui/QPrintDialog>
-#include <QtGui/QTextDocumentWriter>
-#include <QtGui/QPixmap>
-#include <QtGui/QMessageBox>
+#include <QtCore/QString>
 #include <QtGui/QLabel>
+#include <QtGui/QIcon>
 
 #include "simplexmethod.h"
 #include "simplexmethodparams.h"

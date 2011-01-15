@@ -22,6 +22,13 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
+#include <QtGui/QFileDialog>
+#include <QtGui/QPrinter>
+#include <QtGui/QPrintDialog>
+#include <QtGui/QTextDocumentWriter>
+#include <QtGui/QPixmap>
+#include <QtGui/QMessageBox>
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindowClass),
     m_minLimits(2),
@@ -254,7 +261,7 @@ void MainWindow::on_actionAbout_triggered()
     text+= tr("This program is linear programming solver.");
     text+="<br/>";
     text+="<br/>";
-    text+= tr("It uses simplex method to find optimum of function"
+    text+= tr("It uses simplex method to find optimum of function "
                "with selected limits. Use any search engine to find "
                "more information about this algorithm.");
 
